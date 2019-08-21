@@ -47,6 +47,24 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "A whale",
+      "image": "https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dwdd43f787/images/2016/5A7483.650.a.zoom.jpg?sw=1680&sh=2000&sm=cut",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "name": "test",
+      "image": "https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dwdd43f787/images/2016/5A7483.650.a.zoom.jpg?sw=1680&sh=2000&sm=cut",
+      "likes": 0,
+      "id": 10
+    },
+    {
+      "name": "test",
+      "image": "https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dwdd43f787/images/2016/5A7483.650.a.zoom.jpg?sw=1680&sh=2000&sm=cut",
+      "likes": 0,
+      "id": 11
     }
   ]
 }
