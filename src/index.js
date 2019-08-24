@@ -36,12 +36,13 @@ submitToy.addEventListener('click', function(e){
       },
     body: JSON.stringify(newToy)
   })
-  .then(function(res){ //THIS WAY OF DOING A FUNCTION WITHOUT ARROW DOESN'T WORK
-    res.json();
+  .then(function(res){ 
+  console.log(res);
+    return res.json();
   })
-  //.then(res => res.json())   WHY DOES THIS WORK
-  .then(function(newToyFromDB){//  BUT THIS WAY DOESN'T WORK
-    renderAllToys([newToyFromDB])
+  //.then(res => res.json())   
+  .then(function(newToyFromDB){
+    renderAllToys([newToyFromDB])  //pessimistic way of rendering
     window.scrollTo(0,document.body.scrollHeight);
   })
 
@@ -52,10 +53,37 @@ submitToy.addEventListener('click', function(e){
   // })
 
   //Optimistic way of rendering:
-  //putToysOnDom([newToyObj])
+  //renderAllToys([newToyObj])
 
 })
 
+toyCollection.addEventListener('click', function(e){
+  console.log(parseInt(e.target.previousElementSibling.innerText) + 1)
+ // debugger
+  if(e.target.tagName === 'BUTTON'){
+
+    fetch(`http://localhost:3000/toys/${e.target.dataset.toyid}`,
+      {
+        method: "PATCH",
+        headers: 
+        {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+      body:
+      JSON.stringify({
+        "likes": parseInt(e.target.previousElementSibling.innerText) + 1
+      })
+     })
+  
+    //optimistic rendering 
+    e.target.previousElementSibling.innerText = parseInt(e.target.previousElementSibling.innerText) + 1
+  }
+})
+
+// function increaseLikes(){
+
+// }
 
 function renderAllToys(json){
   
